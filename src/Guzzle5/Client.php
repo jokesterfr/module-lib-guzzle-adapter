@@ -10,7 +10,7 @@ use GuzzleHttp\Message\RequestInterface as GuzzleRequest;
 use GuzzleHttp\Message\ResponseInterface as GuzzleResponse;
 use GuzzleHttp\Psr7\Response;
 use Http\Client\Exception as HttplugException;
-use Psr\Http\Client\ClientInterface as ClientClientInterface;
+use Prestashop\ModuleLibGuzzleAdapter\Interfaces\GuzzleClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -20,7 +20,7 @@ use Psr\Http\Message\ResponseInterface;
  *
  * @see https://github.com/php-http/guzzle5-adapter/blob/master/src/Client.php
  */
-class Client implements ClientClientInterface
+class Client implements GuzzleClientInterface
 {
     /**
      * @var ClientInterface
@@ -40,8 +40,10 @@ class Client implements ClientClientInterface
      * Added after duplication of adapter.
      *
      * @param array<string, mixed> $config
+     * 
+     * @return self
      */
-    public static function createWithConfig(array $config): Client
+    public static function createWithConfig(array $config)
     {
         return new self(new GuzzleClient($config));
     }
@@ -60,6 +62,20 @@ class Client implements ClientClientInterface
         }
 
         return $this->createResponse($response);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function send(RequestInterface $request, array $options = [])
+    {
+        $guzzleRequest = $this->client->createRequest(
+            $request->getMethod(),
+            (string) $request->getUri(),
+            $options
+        );
+
+        return $this->client->send($guzzleRequest);
     }
 
     /**

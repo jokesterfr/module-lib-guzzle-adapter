@@ -6,7 +6,7 @@ namespace Prestashop\ModuleLibGuzzleAdapter;
 
 class VersionDetection
 {
-    public function getGuzzleMajorVersionNumber(): ?int
+    public function getGuzzleMajorVersionNumber()
     {
         // Guzzle 7 and above
         if (defined('\GuzzleHttp\ClientInterface::MAJOR_VERSION')) {

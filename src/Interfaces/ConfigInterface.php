@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Prestashop\ModuleLibGuzzleAdapter;
+namespace Prestashop\ModuleLibGuzzleAdapter\Interfaces;
 
 interface ConfigInterface
 {
@@ -14,5 +14,5 @@ interface ConfigInterface
      *
      * @return array<string, mixed>
      */
-    public static function fixConfig(array $config): array;
+    public static function fixConfig(array $config);
 }

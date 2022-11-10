@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Prestashop\ModuleLibGuzzleAdapter\Guzzle7;
 
-use Prestashop\ModuleLibGuzzleAdapter\ConfigInterface;
+use Prestashop\ModuleLibGuzzleAdapter\Interfaces\ConfigInterface;
 
 class Config implements ConfigInterface
 {
@@ -24,6 +24,10 @@ class Config implements ConfigInterface
 
             if (isset($config['defaults']['headers'])) {
                 $config['headers'] = $config['defaults']['headers'];
+            }
+
+            if (isset($config['defaults']['query'])) {
+                $config['query'] = $config['defaults']['query'];
             }
 
             unset($config['defaults']);
