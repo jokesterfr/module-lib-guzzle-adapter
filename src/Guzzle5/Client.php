@@ -115,7 +115,7 @@ class Client implements HttpClientInterface
      * @param GuzzleExceptions\TransferException $exception
      * @param RequestInterface $request
      *
-     * @return Exception
+     * @return \Exception
      */
     private function handleException(GuzzleExceptions\TransferException $exception, RequestInterface $request)
     {

@@ -23,7 +23,7 @@ class ClientFactory
 
     /**
      * @param array<string, mixed> $config
-     * 
+     *
      * @return \Prestashop\ModuleLibGuzzleAdapter\Interfaces\HttpClientInterface
      */
     public function getClient(array $config = [])
@@ -33,7 +33,7 @@ class ClientFactory
 
     /**
      * @param array<string, mixed> $config
-     * 
+     *
      * @return \Prestashop\ModuleLibGuzzleAdapter\Interfaces\HttpClientInterface
      */
     private function initClient(array $config = [])
