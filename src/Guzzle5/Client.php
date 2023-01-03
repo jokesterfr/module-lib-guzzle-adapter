@@ -40,7 +40,7 @@ class Client implements HttpClientInterface
      * Added after duplication of adapter.
      *
      * @param array<string, mixed> $config
-     * 
+     *
      * @return self
      */
     public static function createWithConfig(array $config)
