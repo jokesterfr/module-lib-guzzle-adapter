@@ -26,10 +26,6 @@ class Config implements ConfigInterface
                 $config['headers'] = $config['defaults']['headers'];
             }
 
-            if (isset($config['defaults']['query'])) {
-                $config['query'] = $config['defaults']['query'];
-            }
-
             unset($config['defaults']);
         }
 

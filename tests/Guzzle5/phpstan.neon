@@ -6,5 +6,12 @@ parameters:
 	bootstrapFiles:
 		- vendor/autoload.php
 	reportUnmatchedIgnoredErrors: false
+	ignoreErrors:
+		-
+			message: '#^PHPDoc tag \@throws with type Psr\\Http\\Client\\ClientExceptionInterface is not subtype of Throwable$#'
+			path: ../../src/Interfaces/HttpClientInterface.php
+		-
+			message: '#^Method Prestashop\\ModuleLibGuzzleAdapter\\VersionDetection\:\:getGuzzleMajorVersionNumber\(\) has no return type specified.$#'
+			path: ../../src/VersionDetection.php
 
 	level: 6

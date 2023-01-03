@@ -9,7 +9,7 @@ use GuzzleHttp\ClientInterface;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Utils;
-use Prestashop\ModuleLibGuzzleAdapter\Interfaces\GuzzleClientInterface;
+use Prestashop\ModuleLibGuzzleAdapter\Interfaces\HttpClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -20,7 +20,7 @@ use Psr\Http\Message\ResponseInterface;
  *
  * @see https://github.com/php-http/guzzle7-adapter/blob/master/src/Client.php
  */
-class Client implements GuzzleClientInterface
+class Client implements HttpClientInterface
 {
     /**
      * @var ClientInterface
@@ -64,14 +64,6 @@ class Client implements GuzzleClientInterface
         $promise = $this->client->sendAsync($request);
 
         return new Promise($promise, $request);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function send(RequestInterface $request, array $options = []): ResponseInterface
-    {
-        return $this->client->send($request, $options);
     }
 
     /**

@@ -34,7 +34,7 @@ class ClientFactory
     /**
      * @param array<string, mixed> $config
      * 
-     * @return \Prestashop\ModuleLibGuzzleAdapter\Interfaces\GuzzleClientInterface
+     * @return \Prestashop\ModuleLibGuzzleAdapter\Interfaces\HttpClientInterface
      */
     private function initClient(array $config = [])
     {

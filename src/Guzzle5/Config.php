@@ -28,12 +28,6 @@ class Config implements ConfigInterface
             unset($config['http_errors']);
         }
 
-        if (isset($config['query'])) {
-            $config['defaults']['query'] = $config['query'];
-
-            unset($config['query']);
-        }
-
         if (isset($config['base_uri'])) {
             $config['base_url'] = $config['base_uri'];
 
