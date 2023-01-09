@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Prestashop\ModuleLibGuzzleAdapter;
 
 use Prestashop\ModuleLibGuzzleAdapter\Guzzle5\Client as Guzzle5Client;

@@ -51,7 +51,7 @@ class Client implements HttpClientInterface
     /**
      * {@inheritdoc}
      */
-    public function sendRequest(RequestInterface $request): ResponseInterface
+    public function sendRequest(RequestInterface $request)
     {
         $guzzleRequest = $this->createRequest($request);
 

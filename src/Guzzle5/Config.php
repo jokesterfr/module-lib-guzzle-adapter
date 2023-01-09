@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Prestashop\ModuleLibGuzzleAdapter\Guzzle5;
 
 use Prestashop\ModuleLibGuzzleAdapter\Interfaces\ConfigInterface;
