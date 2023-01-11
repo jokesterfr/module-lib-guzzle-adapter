@@ -6,5 +6,9 @@ parameters:
 	bootstrapFiles:
 		- vendor/autoload.php
 	reportUnmatchedIgnoredErrors: false
+	ignoreErrors:
+		-
+			message: '#^Invalid type Http\\Client\\Exception to throw.$#'
+			path: ../../src/Guzzle7/Promise.php
 
 	level: 6
