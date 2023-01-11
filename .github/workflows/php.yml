@@ -106,7 +106,12 @@ jobs:
           path: ~/.composer/cache
           key: php-composer-cache
 
-      - run: COMPOSER=tests/Guzzle5/composer.json composer install
+      - run: COMPOSER=composer-legacy.json composer install
 
       - name: Run PHPUnit
+        if: ${{ matrix.version == '5.6' }}
+        run: vendor/bin/phpunit tests/unit/Guzzle5ConfigTest.php
+
+      - name: Run PHPUnit
+        if: ${{ matrix.version == '7.2' || matrix.version == '7.4' || matrix.version == '8.1' }}
         run: vendor/bin/phpunit tests/unit

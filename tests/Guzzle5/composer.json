@@ -1,7 +1,5 @@
 {
     "require-dev": {
-        "guzzlehttp/guzzle": "^5.3.4",
-        "phpunit/phpunit": "^9.5|^8.5|^5.7",
-        "prestashop/php-dev-tools": "^4.2|^3.16"
+        "guzzlehttp/guzzle": "^5.3.4"
     }
 }
