@@ -106,7 +106,7 @@ jobs:
           path: ~/.composer/cache
           key: php-composer-cache
 
-      - run: composer install
+      - run: COMPOSER=tests/Guzzle5/composer.json composer install
 
       - name: Run PHPUnit
         run: vendor/bin/phpunit tests/unit
