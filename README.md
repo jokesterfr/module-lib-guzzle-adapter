@@ -13,11 +13,11 @@ composer require prestashop/module-lib-guzzle-adapter
 
 ## Version Guidance
 
-| Version | Status         | Packagist           -| Namespace    | Repo                | Docs                | PHP Version  |
-|---------|----------------|----------------------|--------------|---------------------|---------------------|--------------|
-| <=0.5  | Stable         | `prestashop/module-lib-guzzle-adapter` | `Prestashop\ModuleLibGuzzleAdapter` | [v0.x][lib-1-repo] | N/A                 | >=7.2.5   |
-| >=0.6     | Latest         | `prestashop/module-lib-guzzle-adapter` | `Prestashop\ModuleLibGuzzleAdapter` | [v0.x][lib-php5-repo] | N/A                 | >=5.6.0   |
-| 1.x     | Latest         | `prestashop/module-lib-guzzle-adapter` | `Prestashop\ModuleLibGuzzleAdapter` | [v1.x][lib-1-repo] | N/A                 | >=7.2.5   |
+| Version | Status | Packagist -                            | Namespace                           | Repo                  | Docs | PHP Version |
+| ------- | ------ | -------------------------------------- | ----------------------------------- | --------------------- | ---- | ----------- |
+| <=0.5   | Stable | `prestashop/module-lib-guzzle-adapter` | `Prestashop\ModuleLibGuzzleAdapter` | [v0.x][lib-1-repo]    | N/A  | >=7.2.5     |
+| >=0.6   | Latest | `prestashop/module-lib-guzzle-adapter` | `Prestashop\ModuleLibGuzzleAdapter` | [v0.x][lib-php5-repo] | N/A  | >=5.6.0     |
+| 1.x     | Latest | `prestashop/module-lib-guzzle-adapter` | `Prestashop\ModuleLibGuzzleAdapter` | [v1.x][lib-1-repo]    | N/A  | >=7.2.5     |
 
 [lib-1-repo]: https://github.com/PrestaShopCorp/module-lib-guzzle-adapter/tree/main
 [lib-php5-repo]: https://github.com/PrestaShopCorp/module-lib-guzzle-adapter/tree/0.x
@@ -39,20 +39,21 @@ In this example, `base_url` is known to be a option for Guzzle 5 that has been r
 
 The automatically changed properties are:
 
-| Guzzle 5 property | | Guzzle 7 property |
-| ------------- | -- | ------------- |
-| base_url  | <=> | base_url  |
-| defaults.authorization | <=> | authorization  |
-| defaults.exceptions | <=> | http_errors  |
-| defaults.timeout | <=> | timeout  |
+| Guzzle 5 property      |     | Guzzle 7 property |
+| ---------------------- | --- | ----------------- |
+| base_url               | <=> | base_url          |
+| defaults.authorization | <=> | authorization     |
+| defaults.exceptions    | <=> | http_errors       |
+| defaults.timeout       | <=> | timeout           |
 
 ## Why this library?
 
 Making HTTP requests in a PrestaShop module can be done in several ways. With `file_get_contents()`, cURL or Guzzle when provided by the core.
 
 Depending on the running version of PrestaShop, the bundled version of Guzzle can be different:
-* PrestaShop 1.7: Guzzle 5
-* PrestaShop 8: Guzzle 7
+
+- PrestaShop 1.7: Guzzle 5
+- PrestaShop 8: Guzzle 7
 
 Having a module compatible for these two major PrestaShop versions can be tricky. The classes provided by the two Guzzle version are named the same, but their methods are different.
 
